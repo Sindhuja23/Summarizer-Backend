@@ -52,7 +52,7 @@ bash
 Copy
 Edit
 npm start
-This will run the backend server on http://localhost:5000 by default. You can change the port by modifying the .env file.
+This will run the backend server on http://localhost:5001 by default. You can change the port by modifying the .env file.
 
 API Documentation
 POST /summarize
