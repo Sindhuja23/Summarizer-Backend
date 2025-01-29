@@ -1,0 +1,20 @@
+version: "3.8"
+
+services:
+  express-app:
+    build: .
+    ports:
+      - "3001:3001"  # Map port 3001 on host to port 3001 in the container
+    environment:
+      - NODE_ENV=production
+    depends_on:
+      - ollama  # Make sure Ollama starts first
+
+  ollama:
+    image: ollama/ollama
+    command: ollama pull tinyllama # Download the tinyllama model
+    volumes:
+      - ollama:/root/.ollama  # Persist Ollama data
+
+volumes:
+  ollama:  # Define a volume for Ollama
